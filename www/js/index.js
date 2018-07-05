@@ -98,6 +98,7 @@ var app = {
                                       type: "GET",    
                                       url: "https://sbx00.herokuapp.com/fcm/" + deviceToken, 
                                       success: function(result){
+                                        //Token de registro en tabla de devices
                                         alert(deviceToken);
                                       },
                                       error: function (jqXHR, exception) {
