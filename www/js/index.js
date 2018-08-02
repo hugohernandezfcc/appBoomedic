@@ -39,7 +39,7 @@ var app = {
         app.setupPush();             
 
     },
-    function onBackKeyDown(event) {
+    nBackKeyDown: function(event) {
         event.preventDefault();
     },
     setupPush: function() {
