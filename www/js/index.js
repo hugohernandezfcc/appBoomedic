@@ -61,7 +61,8 @@ var app = {
         console.log('after init');
 
         push.on('registration', function(data) {
-             var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            var devicePlatform = device.platform;
+            alert(devicePlatform);
             console.log('registration event: ' + data.registrationId);
            var oldRegId = window.localStorage.getItem('registrationId');
 
@@ -69,7 +70,7 @@ var app = {
                 // Save new registration ID
                 window.localStorage.setItem('uuid', device.uuid);
                 window.localStorage.setItem('registrationId', data.registrationId);
-           if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) { 
+           if ( devicePlatform == "IOS") { 
                 registerDeviceToken('test' + '&' + 'test');
             }else{
                 registerDeviceToken(data.registrationId + '&' + device.uuid);
