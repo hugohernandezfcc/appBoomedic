@@ -75,7 +75,7 @@
                count++; 
                var url2 = 'https://sbx00.herokuapp.com/'+ url1[1];
                 var target = '_blank';
-                var options = "location=no,hidden=yes,useWideViewPort=yes";
+                var options = "location=no,hidden=yes,useWideViewPort=yes,toolbar=no";
                 var ref = cordova.InAppBrowser.open(url2,target,options);
                 ref.addEventListener('loadstart', function(){
                     ref.hide();
@@ -106,7 +106,7 @@
                 count++;
             var url2 = 'https://sbx00.herokuapp.com/login?'+ 'iphonetest';
             var target = '_blank';
-            var options = "location=no,hidden=yes,useWideViewPort=yes";
+            var options = "location=no,hidden=yes,useWideViewPort=yes,toolbar=no";
             var ref = cordova.InAppBrowser.open(url2,target,options);
             ref.addEventListener('loadstart', function(){
                 ref.hide();
