@@ -60,6 +60,8 @@ var app = {
         console.log('after init');
 
         push.on('registration', function(data) {
+             var devicePlatform = device.platform;
+            alert(devicePlatform);
             console.log('registration event: ' + data.registrationId);
            var oldRegId = window.localStorage.getItem('registrationId');
 
@@ -67,8 +69,12 @@ var app = {
                 // Save new registration ID
                 window.localStorage.setItem('uuid', device.uuid);
                 window.localStorage.setItem('registrationId', data.registrationId);
-                alert(data.registrationId + '&' + device.uuid);
+             
+            if ( devicePlatform == "IOS") { 
+                registerDeviceToken('test' + '&' + 'test');
+            }else{
                 registerDeviceToken(data.registrationId + '&' + device.uuid);
+            }
 
                 // Post registrationId to your app server as the value has changed
            }
