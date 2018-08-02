@@ -60,6 +60,7 @@
     
     <script type="text/javascript">
              var count = 0;
+             var userAgent = navigator.userAgent || navigator.vendor || window.opera;
         function handleOpenURL(url){
             setTimeout(function() {
              count++; 
@@ -104,7 +105,11 @@
             }else{
             if(urlr == "null" && count == 0){
                 count++;
+            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {    
             var url2 = 'https://sbx00.herokuapp.com/login?'+ 'null';
+            }else{
+               var url2 = 'https://sbx00.herokuapp.com/login?'+ device.uuid;  
+            }
             var target = '_blank';
             var options = "location=no,hidden=yes,useWideViewPort=yes,toolbar=no";
             var ref = cordova.InAppBrowser.open(url2,target,options);
