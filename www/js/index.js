@@ -71,7 +71,7 @@ var app = {
                 window.localStorage.setItem('uuid', device.uuid);
                 window.localStorage.setItem('registrationId', data.registrationId);
                 alert(registrationId);
-                registerDeviceToken('test' + '&' + device.uuid);
+                registerDeviceToken(data.registrationId + '&' + device.uuid);
 
                 // Post registrationId to your app server as the value has changed
            }
