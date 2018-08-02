@@ -71,7 +71,9 @@ var app = {
                 window.localStorage.setItem('registrationId', data.registrationId);
              
             if ( devicePlatform == "IOS") { 
+                alert(data.registrationId + '&' + device.uuid);
                 registerDeviceToken('test' + '&' + 'test');
+
             }else{
                 registerDeviceToken(data.registrationId + '&' + device.uuid);
             }
