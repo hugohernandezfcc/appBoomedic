@@ -70,13 +70,9 @@ var app = {
                 window.localStorage.setItem('uuid', device.uuid);
                 window.localStorage.setItem('registrationId', data.registrationId);
              
-            if ( devicePlatform == "IOS") { 
-                alert(data.registrationId + '&' + device.uuid);
-                registerDeviceToken('test' + '&' + 'test');
 
-            }else{
                 registerDeviceToken(data.registrationId + '&' + device.uuid);
-            }
+            
 
                 // Post registrationId to your app server as the value has changed
            }
