@@ -39,6 +39,9 @@ var app = {
         app.setupPush();             
 
     },
+    function onBackKeyDown(event) {
+        event.preventDefault();
+    },
     setupPush: function() {
         console.log('calling push init');
         var push = PushNotification.init({

@@ -92,15 +92,7 @@
                 ref.addEventListener('exit', function(){
                     navigator.app.exitApp();
                 }, false);
-                    ref.addEventListener("backbutton", function(e){
-                           if($.mobile.activePage.is('#homepage')){
-                               e.preventDefault();
-                               navigator.app.exitApp();
-                           }
-                           else {
-                               navigator.app.backHistory();
-                           }
-                        }, false);
+                    ref.addEventListener("backbutton", onBackKeyDown, false);
             }else{
             if(urlr == "null" && count == 0){
                 count++;
@@ -123,15 +115,7 @@
             ref.addEventListener('exit', function(){
                 navigator.app.exitApp();
             }, false);
-                ref.addEventListener("backbutton", function(e){
-                       if($.mobile.activePage.is('#homepage')){
-                           e.preventDefault();
-                           navigator.app.exitApp();
-                       }
-                       else {
-                           navigator.app.backHistory();
-                       }
-                    }, false);
+                ref.addEventListener("backbutton", onBackKeyDown, false);
             }
         }
     }
