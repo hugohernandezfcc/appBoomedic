@@ -36,6 +36,8 @@ var app = {
     onDeviceReady: function() {
         console.log('Received Device Ready Event');
         console.log('calling setup push');
+                cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+                cordova.plugins.Keyboard.disableScroll(true);
         app.setupPush();             
 
     },
