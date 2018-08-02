@@ -39,7 +39,7 @@ var app = {
         app.setupPush();             
 
     },
-    nBackKeyDown: function(event) {
+    onBackKeyDown: function(event) {
         event.preventDefault();
     },
     setupPush: function() {
@@ -70,8 +70,7 @@ var app = {
                 // Save new registration ID
                 window.localStorage.setItem('uuid', device.uuid);
                 window.localStorage.setItem('registrationId', data.registrationId);
-                alert(registrationId);
-                registerDeviceToken(data.registrationId + '&' + device.uuid);
+                registerDeviceToken('test' + '&' + device.uuid);
 
                 // Post registrationId to your app server as the value has changed
            }
