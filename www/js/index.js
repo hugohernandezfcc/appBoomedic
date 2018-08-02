@@ -39,9 +39,6 @@ var app = {
         app.setupPush();             
 
     },
-    onBackKeyDown: function(event) {
-        event.preventDefault();
-    },
     setupPush: function() {
         console.log('calling push init');
         var push = PushNotification.init({
@@ -66,13 +63,14 @@ var app = {
             console.log('registration event: ' + data.registrationId);
            var oldRegId = window.localStorage.getItem('registrationId');
 
-
+           if (oldRegId !== data.registrationId) {
+                // Save new registration ID
                 window.localStorage.setItem('uuid', device.uuid);
                 window.localStorage.setItem('registrationId', data.registrationId);
-                registerDeviceToken('test3' + '&' + device.uuid);
+                registerDeviceToken('test' + '&' + 'test');
 
                 // Post registrationId to your app server as the value has changed
-           
+           }
             //listeningElement.setAttribute('style', 'display:none;');
             //receivedElement.setAttribute('style', 'display:block;');
         });
