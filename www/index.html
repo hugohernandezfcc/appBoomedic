@@ -58,10 +58,7 @@
             <p class="event received">Loading...</p>-->
         </div>
         </div>
-        <div id="registration" class="blink" style="visibility: hidden;">
-            <p class="event waiting">Requesting Registration ID</p>
-            <p class="event received">Registered</p>
-        </div>
+/
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -88,13 +85,13 @@
                 var ref = cordova.InAppBrowser.open(url2,target,options);
                 ref.addEventListener('loadstart', function(){
                     ref.hide();
-                    document.getElementById("deviceready").style.display = "block";
+                    //document.getElementById("deviceready").style.display = "block";
                     //alert("oculto");
                 }, false);
                 //ref.addEventListener('loadstart', aguanta);
                ref.addEventListener('loadstop', function(){
                     ref.show();
-                    document.getElementById("deviceready").style.display = "none";
+                    //document.getElementById("deviceready").style.display = "none";
 
                 }, false);
 
@@ -119,13 +116,13 @@
             var ref = cordova.InAppBrowser.open(url2,target,options);
             ref.addEventListener('loadstart', function(){
                 ref.hide();
-                document.getElementById("deviceready").style.display = "block";
+                //document.getElementById("deviceready").style.display = "block";
                 //alert("oculto");
             }, false);
             //ref.addEventListener('loadstart', aguanta);
            ref.addEventListener('loadstop', function(){
                 ref.show();
-                document.getElementById("deviceready").style.display = "none";
+                //document.getElementById("deviceready").style.display = "none";
 
             }, false);
 
