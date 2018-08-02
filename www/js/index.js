@@ -16,19 +16,18 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-
 var app = {
 
     // Application Constructor
     initialize: function() {
-        //this.bindEvents();
+        this.bindEvents();
     },
     // Bind Event Listeners
     //
     // Bind any events that are required on startup. Common events are:
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
-        //document.addEventListener('deviceready', this.onDeviceReady, false);
+        document.addEventListener('deviceready', this.onDeviceReady, false);
     },
     // deviceready Event Handler
     //
@@ -61,8 +60,6 @@ var app = {
         console.log('after init');
 
         push.on('registration', function(data) {
-            var devicePlatform = device.platform;
-            alert(devicePlatform);
             console.log('registration event: ' + data.registrationId);
            var oldRegId = window.localStorage.getItem('registrationId');
 
@@ -70,11 +67,8 @@ var app = {
                 // Save new registration ID
                 window.localStorage.setItem('uuid', device.uuid);
                 window.localStorage.setItem('registrationId', data.registrationId);
-           if ( devicePlatform == "IOS") { 
-                registerDeviceToken('test' + '&' + 'test');
-            }else{
+                alert(data.registrationId + '&' + device.uuid);
                 registerDeviceToken(data.registrationId + '&' + device.uuid);
-            }
 
                 // Post registrationId to your app server as the value has changed
            }
