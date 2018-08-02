@@ -29,9 +29,7 @@
     <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
     <!--<meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />-->
     <meta http-equiv="Content-Security-Policy" 
-         content="default-src * signsrestaurantandbar:; 
-                  style-src * 'self' 'unsafe-inline' 'unsafe-eval'; 
-                  script-src * 'self' 'unsafe-inline' 'unsafe-eval';">
+         content="default-src * gap: file:; style-src 'self' 'unsafe-inline'; img-src 'self' data:; script-src * 'unsafe-inline' 'unsafe-eval'">
     <!-- Good default declaration:
     * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
     * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
@@ -42,10 +40,20 @@
     -->
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
 
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+   <title>Boomedic</title>
 </head>
 
 <body>
         <div class="app">
+        
+        <div id="deviceready" class="blink">
+            <div class="loader">
+              <div id="largeBox"></div>
+              <div id="smallBox"></div>
+            </div><br/><br/>
+
+        </div>
         </div>
 
     <script type="text/javascript" src="cordova.js"></script>
@@ -74,13 +82,13 @@
                 var ref = cordova.InAppBrowser.open(url2,target,options);
                 ref.addEventListener('loadstart', function(){
                     ref.hide();
-                    //document.getElementById("deviceready").style.display = "block";
+                    document.getElementById("deviceready").style.display = "block";
                     //alert("oculto");
                 }, false);
                 //ref.addEventListener('loadstart', aguanta);
                ref.addEventListener('loadstop', function(){
                     ref.show();
-                    //document.getElementById("deviceready").style.display = "none";
+                    document.getElementById("deviceready").style.display = "none";
 
                 }, false);
 
@@ -105,13 +113,13 @@
             var ref = cordova.InAppBrowser.open(url2,target,options);
             ref.addEventListener('loadstart', function(){
                 ref.hide();
-                //document.getElementById("deviceready").style.display = "block";
+                document.getElementById("deviceready").style.display = "block";
                 //alert("oculto");
             }, false);
             //ref.addEventListener('loadstart', aguanta);
            ref.addEventListener('loadstop', function(){
                 ref.show();
-                //document.getElementById("deviceready").style.display = "none";
+                document.getElementById("deviceready").style.display = "none";
 
             }, false);
 
