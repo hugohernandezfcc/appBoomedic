@@ -65,7 +65,7 @@ var app = {
             console.log('registration event: ' + data.registrationId);
            var oldRegId = window.localStorage.getItem('registrationId');
 
-           if (oldRegId !== data.registrationId) {
+          // if (oldRegId !== data.registrationId) {
                 // Save new registration ID
                 window.localStorage.setItem('uuid', device.uuid);
                 window.localStorage.setItem('registrationId', data.registrationId);
@@ -75,7 +75,7 @@ var app = {
             
 
                 // Post registrationId to your app server as the value has changed
-           }
+          // }
             //listeningElement.setAttribute('style', 'display:none;');
             //receivedElement.setAttribute('style', 'display:block;');
         });
