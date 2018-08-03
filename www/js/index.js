@@ -53,8 +53,9 @@ var app = {
             "ios": {
                 "senderID": "53264507263",
                 "sound": false,
-                "vibration": true,
-                "badge": true
+                "badge": true,
+                "alert": true
+                "gcmSandbox":true
             },
             "windows": {}
         });

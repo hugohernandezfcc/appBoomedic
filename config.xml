@@ -14,6 +14,7 @@
     <plugin name="cordova-plugin-customurlscheme" source="npm">
         <param name="URL_SCHEME" value="boomedic" />
     </plugin>
+    <preference name="phonegap-version" value="cli-7.1.0" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="14" />
     <plugin name="cordova-plugin-battery-status" source="npm" spec="~1.1.1" />
