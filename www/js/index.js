@@ -54,7 +54,7 @@ var app = {
                 "senderID": "53264507263",
                 "sound": false,
                 "badge": true,
-                "alert": true
+                "alert": true,
                 "gcmSandbox":true
             },
             "windows": {}
