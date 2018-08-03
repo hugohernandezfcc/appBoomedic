@@ -51,7 +51,8 @@ var app = {
                  "pushServiceURL": "http://push.api.phonegap.com/v1/push"
              },
             "ios": {
-                "sound": true,
+                "senderID": "53264507263",
+                "sound": false,
                 "vibration": true,
                 "badge": true
             },
