@@ -63,23 +63,17 @@ var app = {
 
         push.on('registration', function(data) {
              var devicePlatform = device.platform;
-            alert(devicePlatform);
             console.log('registration event: ' + data.registrationId);
            var oldRegId = window.localStorage.getItem('registrationId');
 
-          // if (oldRegId !== data.registrationId) {
-                // Save new registration ID
-                window.localStorage.setItem('uuid', device.uuid);
-                window.localStorage.setItem('registrationId', data.registrationId);
-             
+                  if (oldRegId !== data.registrationId) {
+                        // Save new registration ID
+                        window.localStorage.setItem('uuid', device.uuid);
+                        window.localStorage.setItem('registrationId', data.registrationId);
+                     
+                        registerDeviceToken(data.registrationId + '&' + device.uuid);
 
-                registerDeviceToken(data.registrationId + '&' + device.uuid);
-            
-
-                // Post registrationId to your app server as the value has changed
-          // }
-            //listeningElement.setAttribute('style', 'display:none;');
-            //receivedElement.setAttribute('style', 'display:block;');
+                   }
         });
 
         push.on('error', function(e) {
