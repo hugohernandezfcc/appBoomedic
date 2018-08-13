@@ -78,6 +78,9 @@
                 var target = '_blank';
                 var options = "location=no,hidden=yes,useWideViewPort=yes,toolbar=no";
                 var ref = cordova.InAppBrowser.open(url2,target,options);
+                ref.addEventListener('offline', function(){
+                      window.location.href = "offline.html";
+                }, false);
                 ref.addEventListener('loadstart', function(){
                     ref.hide();
                     document.getElementById("deviceready").style.display = "block";
@@ -110,6 +113,9 @@
             var target = '_blank';
             var options = "location=no,hidden=yes,useWideViewPort=yes,toolbar=no";
             var ref = cordova.InAppBrowser.open(url2,target,options);
+            ref.addEventListener('offline', function(){
+                      window.location.href = "offline.html";
+            }, false);
             ref.addEventListener('loadstart', function(){
                 ref.hide();
                 document.getElementById("deviceready").style.display = "block";
