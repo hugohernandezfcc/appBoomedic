@@ -40,7 +40,7 @@ var app = {
         document.addEventListener("offline", app.checkState, false);          
     },
     checkState: function(){
-        alert('Estoy offline');
+        //alert('Estoy offline');
         window.location.href = "offline.html";
     },
     setupPush: function() {
