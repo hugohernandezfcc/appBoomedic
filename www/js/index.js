@@ -28,15 +28,13 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
-        document.addEventListener("offline", app.checkState, false);        
+        document.addEventListener("offline", this.checkState, false);        
     },
     // deviceready Event Handler
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        console.log('Received Device Ready Event');
-        console.log('calling setup push');
         app.setupPush();   
     },
     checkState: function(){
@@ -63,11 +61,9 @@ var app = {
             },
             "windows": {}
         });
-        console.log('after init');
 
         push.on('registration', function(data) {
              var devicePlatform = device.platform;
-            console.log('registration event: ' + data.registrationId);
            var oldRegId = window.localStorage.getItem('registrationId');
 
                   if (oldRegId !== data.registrationId) {
@@ -82,7 +78,6 @@ var app = {
 
         push.on('error', function(e) {
             console.log("push error = " + e.message);
-             alert("push error = " + e.message);
         });
 
         push.on('notification', function(data) {
@@ -104,7 +99,6 @@ var app = {
                                       url: "https://sbx00.herokuapp.com/fcm/" + deviceToken, 
                                       success: function(result){
                                         //Token de registro en tabla de devices
-                                        alert(deviceToken);
                                       },
                                       error: function (jqXHR, exception) {
                                             var msg = '';
@@ -123,7 +117,7 @@ var app = {
                                             } else {
                                                 msg = 'Uncaught Error.\n' + jqXHR.responseText;
                                             }
-                                            alert(msg);
+                                            console.log(msg);
                                         },
                                     })
             }
