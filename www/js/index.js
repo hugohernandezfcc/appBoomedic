@@ -28,6 +28,7 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+        document.addEventListener("offline", app.checkState, false);        
     },
     // deviceready Event Handler
     //
@@ -36,9 +37,12 @@ var app = {
     onDeviceReady: function() {
         console.log('Received Device Ready Event');
         console.log('calling setup push');
-        app.setupPush();         
+        app.setupPush();   
     },
-
+    checkState: function(){
+        //alert('Estoy offline');
+        window.location.href = "offline.html";
+    },
     setupPush: function() {
         console.log('calling push init');
         var push = PushNotification.init({
