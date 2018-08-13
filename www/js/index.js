@@ -36,8 +36,11 @@ var app = {
     onDeviceReady: function() {
         console.log('Received Device Ready Event');
         console.log('calling setup push');
-        app.setupPush();             
-
+        app.setupPush();   
+        document.addEventListener("offline", app.checkState, false);          
+    },
+    checkState: function(){
+    alert('offline');
     },
     setupPush: function() {
         console.log('calling push init');
