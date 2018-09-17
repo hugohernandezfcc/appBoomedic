@@ -41,15 +41,22 @@ body {                  /* prevent copy paste, to allow, change 'none' to 'text'
         background-clip: padding-box;
         color: white;
     }
-
+    .modal-dialog {
+        position: relative;
+        width: auto;
+        margin: 10px;
+    }
 
 h1 {
-    font-size:28px;
+    font-size: 36px;
     text-align:center;
-    font-weight: bold;
+    font-weight: 500;
+    line-height: 1.1;
     color: #FFFFFF;
-    padding-top: 150px;
-    font-famiy: "Arial Black";
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-family: 'Source Sans Pro',sans-serif;
+    margin: .67em 0;
 }
 
 .event {
