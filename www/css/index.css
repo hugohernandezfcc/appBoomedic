@@ -34,7 +34,15 @@ body {                  /* prevent copy paste, to allow, change 'none' to 'text'
 .app {
     align-items: center;
 }
-
+    .modal-content{
+        position: relative;
+        background-color: transparent;
+        -webkit-background-clip: padding-box;
+        background-clip: padding-box;
+        color: white;
+        margin-top: 50%;
+        width: 100%;
+    }
 
 
 h1 {
