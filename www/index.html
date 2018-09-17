@@ -47,7 +47,8 @@
 </head>
 <body>
 
-            <div id="deviceready">
+            <div id="deviceready" style="display: none;">
+            </div>    
                 <div id="loadingmodal" class="modal fade in" role="dialog" style="background: rgba(0, 0, 0, 0.8);">
                       <div class="modal-dialog">
                           <div class="modal-content">
@@ -57,7 +58,7 @@
                           </div>
                       </div>
                   </div>     
-            </div>
+
 
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
@@ -85,13 +86,13 @@
                 var ref = cordova.InAppBrowser.open(url2,target,options);
                 ref.addEventListener('loadstart', function(){
                     ref.hide();
-                    document.getElementById("deviceready").style.display = "block";
+                    document.getElementById("loadingmodal").style.display = "block";
                     //alert("oculto");
                 }, false);
                 //ref.addEventListener('loadstart', aguanta);
                ref.addEventListener('loadstop', function(){
                     ref.show();
-                    document.getElementById("deviceready").style.display = "none";
+                    document.getElementById("loadingmodal").style.display = "none";
 
                 }, false);
 
@@ -117,13 +118,13 @@
             var ref = cordova.InAppBrowser.open(url2,target,options);
             ref.addEventListener('loadstart', function(){
                 ref.hide();
-                document.getElementById("deviceready").style.display = "block";
+                document.getElementById("loadingmodal").style.display = "block";
                 //alert("oculto");
             }, false);
             //ref.addEventListener('loadstart', aguanta);
            ref.addEventListener('loadstop', function(){
                 ref.show();
-                document.getElementById("deviceready").style.display = "none";
+                document.getElementById("loadingmodal").style.display = "none";
 
             }, false);
 
