@@ -47,18 +47,17 @@
 </head>
 <body>
 
-            <div id="deviceready" style="display: none;">
-            </div>    
+            <div id="deviceready">
                 <div id="loadingmodal" class="modal fade in" role="dialog" style="background: rgba(0, 0, 0, 0.8);">
                       <div class="modal-dialog">
                           <div class="modal-content">
                             <div align="center"> 
-                                 <h1><br>Boomedic<br><i class="fa fa-refresh fa-spin"></i><br/>Cargando...</h1><br/>(Esto podría tardar unos segundos)
+                                 <h1><i class="fa fa-refresh fa-spin"></i><br/>Cargando...</h1><br/>(Esto podría tardar unos segundos)
                               </div>
                           </div>
                       </div>
                   </div>     
-
+            </div>
 
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
@@ -86,13 +85,13 @@
                 var ref = cordova.InAppBrowser.open(url2,target,options);
                 ref.addEventListener('loadstart', function(){
                     ref.hide();
-                    document.getElementById("loadingmodal").style.display = "block";
+                    document.getElementById("deviceready").style.display = "block";
                     //alert("oculto");
                 }, false);
                 //ref.addEventListener('loadstart', aguanta);
                ref.addEventListener('loadstop', function(){
                     ref.show();
-                    document.getElementById("loadingmodal").style.display = "none";
+                    document.getElementById("deviceready").style.display = "none";
 
                 }, false);
 
@@ -118,13 +117,13 @@
             var ref = cordova.InAppBrowser.open(url2,target,options);
             ref.addEventListener('loadstart', function(){
                 ref.hide();
-                document.getElementById("loadingmodal").style.display = "block";
+                document.getElementById("deviceready").style.display = "block";
                 //alert("oculto");
             }, false);
             //ref.addEventListener('loadstart', aguanta);
            ref.addEventListener('loadstop', function(){
                 ref.show();
-                document.getElementById("loadingmodal").style.display = "none";
+                document.getElementById("deviceready").style.display = "none";
 
             }, false);
 
