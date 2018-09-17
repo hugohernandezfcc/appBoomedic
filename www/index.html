@@ -76,7 +76,8 @@
 
          //******** Function for custom url or launcher ***************//
          function urlnew(urlr){
-
+            var loader  = $('div.ui-loader');
+            loader.hide();
             url1 = urlr.split(':');
               if(url1[0] == 'boomedic'){
                count++; 
