@@ -41,7 +41,6 @@ body {                  /* prevent copy paste, to allow, change 'none' to 'text'
     background-clip: padding-box;
     color: white;
     margin-top: 60%;
-    width: 100%;
 }
 
 h1 {
