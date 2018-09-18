@@ -40,7 +40,7 @@ body {                  /* prevent copy paste, to allow, change 'none' to 'text'
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
     color: white;
-    margin-top: 50%;
+    margin-top: 60%;
     width: 100%;
 }
 
