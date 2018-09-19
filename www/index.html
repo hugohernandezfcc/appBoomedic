@@ -94,11 +94,6 @@
                 }, false);
                 //ref.addEventListener('loadstart', aguanta);
                ref.addEventListener('loadstop', function(){
-                if(ref.location.href == 'https://sbx00.herokuapp.com'){
-                    ref.executeScript({
-                        code: "window.location = '"+url2+"';"
-                    });
-                }
                     ref.show();
                     document.getElementById("deviceready").style.display = "none";
 
@@ -131,11 +126,6 @@
             }, false);
             //ref.addEventListener('loadstart', aguanta);
            ref.addEventListener('loadstop', function(){
-                if(ref.location.href == 'https://sbx00.herokuapp.com'){
-                    ref.executeScript({
-                        code: "window.location = '"+url2+"';"
-                    });
-                }
                 ref.show();
                 document.getElementById("deviceready").style.display = "none";
 
