@@ -95,6 +95,7 @@
                 //ref.addEventListener('loadstart', aguanta);
                ref.addEventListener('loadstop', function(){
                     ref.show();
+                    alert(ref.location.href);
                     document.getElementById("deviceready").style.display = "none";
 
                 }, false);
@@ -127,6 +128,7 @@
             //ref.addEventListener('loadstart', aguanta);
            ref.addEventListener('loadstop', function(){
                 ref.show();
+                alert(ref.location.href);
                 document.getElementById("deviceready").style.display = "none";
 
             }, false);
