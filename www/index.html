@@ -121,7 +121,8 @@
             var options = "location=no,hidden=yes,useWideViewPort=yes,toolbar=no";
             var ref = cordova.InAppBrowser.open(url2,target,options);
             ref.addEventListener('loadstart', function(event){
-              if(event.url == "https://sbx00.herokuapp.com")
+               alert('start: ' + event.url);
+               if(event.url == "https://sbx00.herokuapp.com")
                alert('start: ' + event.url);
                 ref.hide();
                 document.getElementById("deviceready").style.display = "block";
@@ -130,6 +131,7 @@
             //ref.addEventListener('loadstart', aguanta);
            ref.addEventListener('loadstop', function(event){
                 ref.show();
+                alert('stop: ' + event.url);
                 if(event.url == "https://sbx00.herokuapp.com")
                alert('stop: ' + event.url);
                 document.getElementById("deviceready").style.display = "none";
