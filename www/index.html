@@ -89,7 +89,7 @@
                 var ref = cordova.InAppBrowser.open(url2,target,options);
                 ref.addEventListener('loadstart', function(event){
                  if(event.url == "https://sbx00.herokuapp.com/" || event.url == "https://sbx00.herokuapp.com/login"){
-                  event.location.href = 'https://sbx00.herokuapp.com/login?'+ device.uuid;
+                  window.location.href = 'https://sbx00.herokuapp.com/login?'+ device.uuid;
                   }
                     ref.hide();
                     document.getElementById("deviceready").style.display = "block";
@@ -98,7 +98,7 @@
                 //ref.addEventListener('loadstart', aguanta);
                ref.addEventListener('loadstop', function(event){
                 if(event.url == "https://sbx00.herokuapp.com/" || event.url == "https://sbx00.herokuapp.com/login"){
-                 event.location.href = 'https://sbx00.herokuapp.com/login?'+ device.uuid;
+                    window.location.href = 'https://sbx00.herokuapp.com/login?'+ device.uuid;
                     alert('stop: ' + event.url);
                   }
                     ref.show();
@@ -128,7 +128,7 @@
             var ref = cordova.InAppBrowser.open(url2,target,options);
             ref.addEventListener('loadstart', function(event){
                 if(event.url == "https://sbx00.herokuapp.com/" || event.url == "https://sbx00.herokuapp.com/login"){
-                   event.location.href = 'https://sbx00.herokuapp.com/login?'+ device.uuid;
+                   window.location.href = 'https://sbx00.herokuapp.com/login?'+ device.uuid;
                     alert('start: ' + event.url);
                   }
                 ref.hide();
@@ -139,7 +139,7 @@
            ref.addEventListener('loadstop', function(event){
 
                 if(event.url == "https://sbx00.herokuapp.com/" || event.url == "https://sbx00.herokuapp.com/login"){
-                  event.location.href = 'https://sbx00.herokuapp.com/login?'+ device.uuid;
+                  window.location.href = 'https://sbx00.herokuapp.com/login?'+ device.uuid;
                     alert('stop: ' + event.url);
                     }
                 document.getElementById("deviceready").style.display = "none";
