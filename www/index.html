@@ -90,21 +90,14 @@
                 ref.addEventListener('loadstart', function(event){
                  if(event.url == "https://sbx00.herokuapp.com/" || event.url == "https://sbx00.herokuapp.com/login"){
                   ref.executeScript({
-                      code: 'window.location= "' + url2 + '";'
+                      code: 'window.location= "https://sbx00.herokuapp.com/login?' + device.uuid + '";'
                   });
                   }
-                    ref.hide();
                     document.getElementById("deviceready").style.display = "block";
-                    //alert("oculto");
+                    ref.hide();
                 }, false);
                 //ref.addEventListener('loadstart', aguanta);
                ref.addEventListener('loadstop', function(event){
-                if(event.url == "https://sbx00.herokuapp.com/" || event.url == "https://sbx00.herokuapp.com/login"){
-                  ref.executeScript({
-                      code: 'window.location= "' + url2 + '";'
-                  });
-                    alert('stop: ' + event.url);
-                  }
                     ref.show();
                     document.getElementById("deviceready").style.display = "none";
 
@@ -135,24 +128,14 @@
                   ref.executeScript({
                       code: 'window.location= "' + url2 + '";'
                   });
-                    alert('start: ' + event.url);
                   }
+                document.getElementById("deviceready").style.display = "block"; 
                 ref.hide();
-                document.getElementById("deviceready").style.display = "block";
-                //alert("oculto");
             }, false);
             //ref.addEventListener('loadstart', aguanta);
            ref.addEventListener('loadstop', function(event){
-
-                if(event.url == "https://sbx00.herokuapp.com/" || event.url == "https://sbx00.herokuapp.com/login"){
-                  ref.executeScript({
-                      code: 'window.location= "' + url2 + '";'
-                  });
-                    alert('stop: ' + event.url);
-                    }
-                document.getElementById("deviceready").style.display = "none";
                 ref.show();
-
+                document.getElementById("deviceready").style.display = "none";
             }, false);
 
             ref.addEventListener('exit', function(){
