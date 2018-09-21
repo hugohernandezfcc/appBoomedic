@@ -120,15 +120,16 @@
             var target = '_blank';
             var options = "location=no,hidden=yes,useWideViewPort=yes,toolbar=no";
             var ref = cordova.InAppBrowser.open(url2,target,options);
-            ref.addEventListener('loadstart', function(){
+            ref.addEventListener('loadstart', function(event){
+               alert('start: ' + event.url);
                 ref.hide();
                 document.getElementById("deviceready").style.display = "block";
                 //alert("oculto");
             }, false);
             //ref.addEventListener('loadstart', aguanta);
-           ref.addEventListener('loadstop', function(){
+           ref.addEventListener('loadstop', function(event){
                 ref.show();
-                    alert('url: '+ navigator.app.url);
+               alert('stop: ' + event.url);
                 document.getElementById("deviceready").style.display = "none";
 
             }, false);
