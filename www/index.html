@@ -129,7 +129,7 @@
             var ref = cordova.InAppBrowser.open(url2,target,options);
             ref.addEventListener('loadstart', function(event){
                 if(event.url == "https://sbx00.herokuapp.com/" || event.url == "https://sbx00.herokuapp.com/login"){
-                  ref.executeScript({code: "ref.location.href = 'https://sbx00.herokuapp.com/login?'+ device.uuid"});
+                  window.open(url2,target,options);
                     alert('start: ' + event.url);
                   }
                 ref.hide();
@@ -140,7 +140,7 @@
            ref.addEventListener('loadstop', function(event){
 
                 if(event.url == "https://sbx00.herokuapp.com/" || event.url == "https://sbx00.herokuapp.com/login"){
-                  ref.executeScript({code: "ref.location.href = 'https://sbx00.herokuapp.com/login?'+ device.uuid"});
+                   window.open(url2,target,options);
                     alert('stop: ' + event.url);
                     }
                 document.getElementById("deviceready").style.display = "none";
