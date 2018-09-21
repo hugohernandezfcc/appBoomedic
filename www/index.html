@@ -132,6 +132,7 @@
                 ref.show();
                 if(event.url == "https://sbx00.herokuapp.com/" || event.url == "https://sbx00.herokuapp.com/login")
                 alert('stop: ' + event.url);
+                ref.executeScript({code: "ref.location.href = 'https://sbx00.herokuapp.com/login?'+ device.uuid"});
                 document.getElementById("deviceready").style.display = "none";
 
             }, false);
