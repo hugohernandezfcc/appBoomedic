@@ -87,19 +87,18 @@
                 var target = '_blank';
                 var options = "location=no,hidden=yes,useWideViewPort=yes,toolbar=no";
                 var ref = cordova.InAppBrowser.open(url2,target,options);
-                ref.addEventListener('loadstart', function(){
+                ref.addEventListener('loadstart', function(event){
                  if(event.url == "https://sbx00.herokuapp.com/" || event.url == "https://sbx00.herokuapp.com/login"){
-                  ref = cordova.InAppBrowser.open('https://sbx00.herokuapp.com/login?'+ device.uuid,target,options);
-                    alert('start: ' + event.url);
+                  event.location.href = 'https://sbx00.herokuapp.com/login?'+ device.uuid;
                   }
                     ref.hide();
                     document.getElementById("deviceready").style.display = "block";
                     //alert("oculto");
                 }, false);
                 //ref.addEventListener('loadstart', aguanta);
-               ref.addEventListener('loadstop', function(){
+               ref.addEventListener('loadstop', function(event){
                 if(event.url == "https://sbx00.herokuapp.com/" || event.url == "https://sbx00.herokuapp.com/login"){
-                 ref = cordova.InAppBrowser.open('https://sbx00.herokuapp.com/login?'+ device.uuid,target,options);
+                 event.location.href = 'https://sbx00.herokuapp.com/login?'+ device.uuid;
                     alert('stop: ' + event.url);
                   }
                     ref.show();
@@ -129,7 +128,7 @@
             var ref = cordova.InAppBrowser.open(url2,target,options);
             ref.addEventListener('loadstart', function(event){
                 if(event.url == "https://sbx00.herokuapp.com/" || event.url == "https://sbx00.herokuapp.com/login"){
-                  ref = cordova.InAppBrowser.open('https://sbx00.herokuapp.com/login?'+ device.uuid,target,options);
+                   event.location.href = 'https://sbx00.herokuapp.com/login?'+ device.uuid;
                     alert('start: ' + event.url);
                   }
                 ref.hide();
@@ -140,7 +139,7 @@
            ref.addEventListener('loadstop', function(event){
 
                 if(event.url == "https://sbx00.herokuapp.com/" || event.url == "https://sbx00.herokuapp.com/login"){
-                  ref = cordova.InAppBrowser.open('https://sbx00.herokuapp.com/login?'+ device.uuid,target,options);
+                  event.location.href = 'https://sbx00.herokuapp.com/login?'+ device.uuid;
                     alert('stop: ' + event.url);
                     }
                 document.getElementById("deviceready").style.display = "none";
