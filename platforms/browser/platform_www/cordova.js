@@ -217,6 +217,17 @@ var cordova = {
      * bNoDetach is required for events which cause an exception which needs to be caught in native code
      */
     fireDocumentEvent: function(type, data, bNoDetach) {
+          if(type == "backbutton" || type == "menubutton" || type == "searchbutton"){
+                var e = document.createEvent('Events');
+                e.initEvent(type);
+                if (data) {
+                    for (var i in data) {
+                        e[i] = data[i];
+                    }
+                }
+                document.dispatchEvent(e);
+                return;
+            }
         var evt = createEvent(type, data);
         if (typeof documentEventHandlers[type] != 'undefined') {
             if( bNoDetach ) {
