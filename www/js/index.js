@@ -36,14 +36,6 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.setupPush();   
-        app.backbut();
-
-    },
-    backbut: function(){
-        document.addEventListener("backbutton", function (e) {
-            alert('adios chibi');
-            e.preventDefault();
-        }, false );
     },
     checkState: function(){
         //alert('Estoy offline');

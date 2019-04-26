@@ -105,7 +105,7 @@
 
             ref.addEventListener('exit', function(event){
                 alert('Adiós');
-                navigator.app.exitApp();
+                  ref.close();
             }, false);
                 ref.addEventListener('backbutton', function(e){
                    alert('me regreso yeih');
@@ -144,7 +144,7 @@
 
             ref.addEventListener('exit', function(event){
                 alert('Adiós');
-                navigator.app.exitApp();
+                ref.close();
             }, false);
                 ref.addEventListener('backbutton', function(e){
                    alert('me regreso yeih');
