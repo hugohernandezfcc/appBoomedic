@@ -103,22 +103,20 @@
 
                 }, false);
 
-            ref.addEventListener('exit', function(event){
-                alert('Adiós');
-                navigator.app.exitApp();
-            }, false);
-                ref.addEventListener('backbutton', function(e){
-                   alert('me regreso yeih');
-                       if($.mobile.activePage.is('#homepage')){
-                          alert('good bye');
-                           navigator.app.exitApp();
-
-                       }
-                       else {
-                            alert('me regreso yeih');
-                           navigator.app.backHistory();
-                       }
-                    }, false);
+                ref.addEventListener('exit', function(){
+                    navigator.app.exitApp();
+                }, false);
+                    ref.addEventListener("backbutton", function(e){
+                           if($.mobile.activePage.is('#homepage')){
+                             alert('adiosito');
+                               e.preventDefault();
+                               navigator.app.exitApp();
+                           }
+                           else {
+                             alert('adiosito');
+                               navigator.app.backHistory();
+                           }
+                        }, false);
             }else{
             if(urlr == "null" && count == 0){
                 count++;
@@ -146,7 +144,7 @@
                 alert('Adiós');
                 navigator.app.exitApp();
             }, false);
-                ref.addEventListener('backbutton', function(e){
+                ref.addEventListener('backbutton', function(event){
                    alert('me regreso yeih');
                        if($.mobile.activePage.is('#homepage')){
                            e.preventDefault();
