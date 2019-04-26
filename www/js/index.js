@@ -36,15 +36,18 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.setupPush();   
-        document.addEventListener("backbutton", this.backbut, false );
+        app.backbut();
+
+    },
+    backbut: function(){
+        document.addEventListener("backbutton", function (e) {
+            alert('adios chibi');
+            e.preventDefault();
+        }, false );
     },
     checkState: function(){
         //alert('Estoy offline');
         window.location.href = "offline.html";
-    },
-    backbut: function(e){
-            alert('adios chibi');
-            e.preventDefault();
     },
     setupPush: function() {
         console.log('calling push init');
