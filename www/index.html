@@ -107,7 +107,7 @@
                 alert('Adiós');
                 navigator.app.exitApp();
             }, false);
-                ref.addEventListener('backbutton', function(event){
+                ref.addEventListener('backbutton', function(e){
                    alert('me regreso yeih');
                        if($.mobile.activePage.is('#homepage')){
                           alert('good bye');
@@ -146,9 +146,10 @@
                 alert('Adiós');
                 navigator.app.exitApp();
             }, false);
-                ref.addEventListener('backbutton', function(event){
+                ref.addEventListener('backbutton', function(e){
                    alert('me regreso yeih');
                        if($.mobile.activePage.is('#homepage')){
+                           e.preventDefault();
                           alert('good bye');
                            navigator.app.exitApp();
 

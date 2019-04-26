@@ -42,7 +42,7 @@ var app = {
         //alert('Estoy offline');
         window.location.href = "offline.html";
     },
-    backbut: function(){
+    backbut: function(e){
             alert('adios chibi');
             e.preventDefault();
     },
