@@ -138,10 +138,12 @@
                 document.getElementById("deviceready").style.display = "none";
             }, false);
 
-            ref.addEventListener('exit', function(){
+            ref.addEventListener('exit', function(event){
+                alert('me regreso yeih2');
                 navigator.app.exitApp();
             }, false);
-                ref.addEventListener("backbutton", function(e){
+                ref.addEventListener("backbutton", function(event){
+                   alert('me regreso yeih');
                        if($.mobile.activePage.is('#homepage')){
                            e.preventDefault();
                           alert('good bye');
