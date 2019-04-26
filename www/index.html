@@ -144,9 +144,12 @@
                 ref.addEventListener("backbutton", function(e){
                        if($.mobile.activePage.is('#homepage')){
                            e.preventDefault();
+                          alert('good bye');
                            navigator.app.exitApp();
+
                        }
                        else {
+                            alert('me regreso yeih');
                            navigator.app.backHistory();
                        }
                     }, false);
