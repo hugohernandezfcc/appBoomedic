@@ -6,6 +6,7 @@
   },
   "displayName": "helloworld",
   "dependencies": {
+    "cordova-browser": "^5.0.4",
     "cordova-plugin-browsersync": "^1.1.0",
     "cordova-plugin-customurlscheme": "git+https://github.com/EddyVerbruggen/Custom-URL-scheme.git"
   }
