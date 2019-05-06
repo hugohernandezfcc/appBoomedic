@@ -80,10 +80,10 @@
                     var loader  = $('div.ui-loader');
                     loader.hide();
                     /*              */
-            url1 = urlr.split(':');
+                url1 = urlr.split(':');
               if(url1[0] == 'boomedic'){
-               count++; 
-               var url2 = 'https://sbx00.herokuapp.com/'+ url1[1];
+                count++; 
+                var url2 = 'https://sbx00.herokuapp.com/'+ url1[1];
                 var target = '_blank';
                 var options = "location=no,hidden=yes,useWideViewPort=yes,toolbar=no";
                 var ref = cordova.InAppBrowser.open(url2,target,options);
@@ -93,7 +93,7 @@
                       code: 'window.location= "https://sbx00.herokuapp.com/login?' + device.uuid + '";'
                   });
                   }
-                    document.getElementById("deviceready").style.display = "block";
+                    // document.getElementById("deviceready").style.display = "block";
                     ref.hide();
                 }, false);
                 //ref.addEventListener('loadstart', aguanta);
