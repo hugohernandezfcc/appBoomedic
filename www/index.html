@@ -87,21 +87,24 @@
                 var url2 = 'https://sbx00.herokuapp.com/'+ url1[1];
                 var target = '_blank';
                 //var options = "location=no,hidden=yes,useWideViewPort=yes,toolbar=no";
-                var options = "";
+                var options = "location=no,hidden=yes,useWideViewPort=yes,toolbar=no";
                 
                 var ref = cordova.InAppBrowser.open(url2,target,options);
+
                 ref.addEventListener('loadstart', function(event){
-                 if(event.url == "https://sbx00.herokuapp.com/" || event.url == "https://sbx00.herokuapp.com/login"){
-                  ref.executeScript({
+
+                 if(event.url == "https://sbx00.herokuapp.com/" || event.url == " https://sbx00.herokuapp.com/login"){
+                    ref.executeScript({
                       code: 'window.location= "https://sbx00.herokuapp.com/login?' + device.uuid + '";'
-                  });
+                    });
                   }
                     // document.getElementById("deviceready").style.display = "block";
                     ref.hide();
                 }, false);
                 //ref.addEventListener('loadstart', aguanta);
+               
                ref.addEventListener('loadstop', function(event){
-                    ref.show();
+                    //ref.show();
                     document.getElementById("deviceready").style.display = "none";
 
                 }, false);
@@ -139,7 +142,7 @@
             }, false);
             //ref.addEventListener('loadstart', aguanta);
            ref.addEventListener('loadstop', function(event){
-                ref.show();
+                //ref.show();
                 document.getElementById("deviceready").style.display = "none";
             }, false);
 
