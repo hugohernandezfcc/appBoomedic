@@ -90,11 +90,12 @@
                 var options = "";
                 
                 var ref = cordova.InAppBrowser.open(url2,target,options);
+                
                 ref.addEventListener('loadstart', function(event){
                  if(event.url == "https://sbx00.herokuapp.com/" || event.url == "https://sbx00.herokuapp.com/login"){
-                  ref.executeScript({
-                      code: 'window.location= "https://sbx00.herokuapp.com/login?' + device.uuid + '";'
-                  });
+                    ref.executeScript({
+                        code: 'window.location= "https://sbx00.herokuapp.com/login?' + device.uuid + '";'
+                    });
                   }
                     // document.getElementById("deviceready").style.display = "block";
                     ref.hide();
@@ -126,14 +127,15 @@
                var url2 = 'https://sbx00.herokuapp.com/login?'+ device.uuid;  
             
             var target = '_blank';
-            //var options = "location=no,hidden=yes,useWideViewPort=yes,toolbar=no";
-            var options = "";
+            var options = "location=no,hidden=yes,useWideViewPort=yes,toolbar=no";
+
             var ref = cordova.InAppBrowser.open(url2,target,options);
             ref.addEventListener('loadstart', function(event){
+              
                 if(event.url == "https://sbx00.herokuapp.com/" || event.url == "https://sbx00.herokuapp.com/login"){
-                  ref.executeScript({
-                      code: 'window.location= "' + url2 + '";'
-                  });
+                  // ref.executeScript({
+                  //     code: 'window.location= "' + url2 + '";'
+                  // });
                   }
                 document.getElementById("deviceready").style.display = "block"; 
                 ref.hide();
