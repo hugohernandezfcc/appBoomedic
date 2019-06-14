@@ -67,12 +67,12 @@
     
     <script type="text/javascript">
              var count = 0;
-        function handleOpenURL(url){
-            setTimeout(function() {
-             count++; 
-             urlnew(url);
-              }, 0);
-         };
+            function handleOpenURL(url){
+                setTimeout(function() {
+                 count++; 
+                 urlnew(url);
+                  }, 0);
+             };
 
          //******** Function for custom url or launcher ***************//
          function urlnew(urlr){
@@ -81,11 +81,14 @@
                     loader.hide();
                     /*              */
                 url1 = urlr.split(':');
+              
               if(url1[0] == 'boomedic'){
                 count++; 
                 var url2 = 'https://sbx00.herokuapp.com/'+ url1[1];
                 var target = '_blank';
-                var options = "location=no,hidden=yes,useWideViewPort=yes,toolbar=no";
+                //var options = "location=no,hidden=yes,useWideViewPort=yes,toolbar=no";
+                var options = "";
+                
                 var ref = cordova.InAppBrowser.open(url2,target,options);
                 ref.addEventListener('loadstart', function(event){
                  if(event.url == "https://sbx00.herokuapp.com/" || event.url == "https://sbx00.herokuapp.com/login"){
